@@ -1,0 +1,75 @@
+:root{
+  --maroon:#6b0f1a; --maroon-dark:#520b14;
+  --ink:#111; --muted:#444; --field:#e9e9e9; --line:#d9d9d9;
+  --ok-bg:#e8f5ec; --ok:#1d6b3a; --err-bg:#fbeaec; --err:#8f1626;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Poppins',system-ui,sans-serif;color:var(--ink);background:#fff;font-size:14px}
+h1{color:var(--maroon);font-weight:600;font-size:22px;margin:0 0 20px;text-align:center}
+a{color:var(--maroon);font-weight:600;text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--maroon);outline-offset:2px}
+
+/* Layout Login & Register */
+.auth{display:grid;grid-template-columns:minmax(260px,45%) 1fr;min-height:100vh}
+.hero{position:relative;background:#cfd2d4 url('../img/akmil.jpeg') center/cover no-repeat}
+.hero .brand{position:absolute;top:18px;left:20px;color:#fff;font-weight:600;font-size:22px;text-shadow:0 1px 4px rgba(0,0,0,.45)}
+.panel{display:flex;align-items:center;justify-content:center;padding:32px 24px}
+.form-wrap{width:100%;max-width:340px}
+
+/* Field */
+.field{position:relative;margin-bottom:12px}
+.field input{width:100%;height:42px;border:0;border-radius:3px;background:var(--field);font:inherit;font-size:13px;padding:0 40px 0 14px;color:var(--ink)}
+.field.has-icon input{padding-left:40px}
+.field input::placeholder{color:#777}
+.field .ico{position:absolute;left:12px;top:50%;width:17px;height:17px;transform:translateY(-50%);color:#777;pointer-events:none}
+.toggle-pass{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:32px;height:32px;border:0;background:none;color:#555;cursor:pointer;display:grid;place-items:center}
+.toggle-pass .ico{position:static;transform:none;pointer-events:none}
+
+/* Tombol & teks */
+.btn{display:block;margin:18px auto 14px;min-width:120px;padding:10px 28px;border:0;border-radius:4px;background:var(--maroon);color:#fff;font:600 13px 'Poppins',sans-serif;cursor:pointer}
+.btn:hover{background:var(--maroon-dark)}
+.btn-sm{margin:0;min-width:0;padding:6px 16px}
+.right{text-align:right;margin:-4px 0 0}
+.small{font-size:11px;font-weight:500}
+.muted{color:var(--muted)}
+.center{text-align:center;font-size:12px;margin:0}
+
+/* Alert */
+.alert{padding:10px 12px;border-radius:4px;font-size:12px;margin-bottom:14px;line-height:1.5}
+.alert-success{background:var(--ok-bg);color:var(--ok)}
+.alert-error{background:var(--err-bg);color:var(--err)}
+
+/* Verifikasi OTP */
+.verify-page{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#2a2a2a;padding:24px}
+.verify-card{background:#fff;width:100%;max-width:560px;padding:44px 32px 36px;text-align:center}
+.verify-card h1{font-size:24px;margin-bottom:8px}
+.verify-card .lead{margin:0 0 22px;line-height:1.55}
+.otp{display:flex;gap:18px;justify-content:center;margin:26px 0 24px}
+.otp-box{width:54px;height:54px;border:2px solid transparent;border-radius:3px;background:var(--field);text-align:center;font:600 22px 'Poppins',sans-serif;color:var(--maroon)}
+.otp-box:focus{outline:none;border-color:var(--maroon);background:#fff}
+.resend{font-size:13px;margin:0}
+.link{border:0;background:none;padding:0;color:var(--maroon);font:600 13px 'Poppins',sans-serif;cursor:pointer}
+.link:hover{text-decoration:underline}
+.verify-card .btn{margin-top:26px}
+
+/* Dashboard */
+.dash{background:#f6f4f4}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:14px 28px;background:var(--maroon);color:#fff}
+.logo{font-weight:600;font-size:20px}
+.who{display:flex;align-items:center;gap:16px;font-size:13px}
+.who .btn{background:#fff;color:var(--maroon)}
+.dash-main{max-width:960px;margin:0 auto;padding:36px 24px}
+.dash-main h1{text-align:left;font-size:22px;margin-bottom:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:24px}
+.card{background:#fff;border-left:4px solid var(--maroon);padding:18px 20px}
+.card h2{margin:0 0 6px;font-size:16px;color:var(--maroon)}
+.card p{margin:0;color:var(--muted);font-size:13px}
+
+@media (max-width:720px){
+  .auth{grid-template-columns:1fr}
+  .hero{min-height:150px}
+  .otp{gap:10px}
+  .otp-box{width:48px;height:48px}
+  .topbar{padding:12px 16px}
+}
